@@ -43,11 +43,11 @@ const FloatingCode = () => {
 
 export const Hero = () => {
     return (
-        <div className="relative w-full lg:h-screen h-3/4 lg:pt-60 pt-70">
+        <div className="relative w-full lg:h-screen h-3/4 lg:pt-60 pt-30 pb-30">
             <FloatingCode/>
-            <div className="lg:px-80 px-20 absolute z-10">
+            <div className="lg:px-80 px-8 absolute z-10">
                 <motion.span
-                    className="font-mono lg:text-5xl text-4xl block font-medium pb-10"
+                    className="font-mono lg:text-5xl text-4xl block font-medium md:pb-10 pb-5"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}

@@ -89,7 +89,7 @@ export const AboutMe = () => {
 
 
     return (
-        <div className="w-full h-screen mt-60 pt-40 p-20 relative" id="about-me">
+        <div className="w-full sm:h-screen mt-60 pt-40 sm:p-20 p-5 pb-20 relative" id="about-me">
             <motion.h2
                 className="lg:text-9xl text-6xl font-mont font-bold mb-5 leading-tight tracking-tight absolute left-1/2 -translate-x-1/2 top-1/2"
                 initial={{ opacity: 0, y: 30 }}
@@ -113,7 +113,7 @@ export const AboutMe = () => {
                 <div className="w-full left-0 flex gap-1 overflow-hidden">
                     {tab.map((btn, index) => {
                         return (
-                            <button className={`w-48 h-15 font-mont font-bold text-xl rounded-t-3xl focus:outline-none focus: ring-0 cursor-pointer transition ease-in-out ${activeTab === index ? "bg-white/20 translate-y-0" : "bg-white/10 translate-y-4"}`} onClick={() => setActiveTab(index)} key={index}>
+                            <button className={`md:w-48 w-40 h-15 font-mont font-bold text-xl rounded-t-3xl focus:outline-none focus: ring-0 cursor-pointer transition ease-in-out ${activeTab === index ? "bg-white/20 translate-y-0" : "bg-white/10 translate-y-4"}`} onClick={() => setActiveTab(index)} key={index}>
                                 {btn.name}
                             </button>
                         )

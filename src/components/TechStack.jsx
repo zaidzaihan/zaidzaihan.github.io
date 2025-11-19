@@ -36,7 +36,7 @@ export const TechStack = () => {
     }, [hoveredIndex]);
 
     return (
-        <div className="w-screen h-auto md:p-20 sm:pt-20 sm:px-5 relative overflow-visible">
+        <div className="w-screen h-auto md:p-20 sm:pt-20 px-5 relative overflow-visible">
             <motion.h2
                 className="md:text-[18vh] text-6xl font-mont font-bold mb-5 leading-tight tracking-tight"
                 initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ export const TechStack = () => {
                 {/* Tiles */}
                 <div
                     ref={el => tileRefs.current[0] = el}
-                    className="bg-white/90 h-80 flex items-center col-span-4 justify-center rounded-lg relative overflow-hidden"
+                    className="bg-white/90 md:h-80 flex items-center col-span-4 justify-center rounded-lg relative overflow-hidden"
                     onMouseEnter={() => setHoveredIndex(0)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -100,7 +100,7 @@ export const TechStack = () => {
                     <motion.img
                         src={nextLogo}
                         alt="Next"
-                        className="w-50 h-50 relative z-20"
+                        className="sm:w-50 sm:h-50 h-25 w-25 relative z-20"
                         animate={{ filter: hoveredIndex === 1 ? 'invert(1) brightness(2)' : 'invert(0) brightness(1)' }}
                         transition={{ duration: 0.2, ease: 'easeInOut' }}
                     />

@@ -11,14 +11,30 @@ const Github = () => (
 
 export const Footer = () => {
   return (
-    <div className="md:h-screen w-full pt-20 relative">
-      <div className="font-mont md:text-[18vh] text-6xl md:pl-20 pl-5 sm:py-5 font-bold">LET'S TALK.</div>
-      <div className="grid grid-rows-2 grid-cols-12 w-full h-[55vh] gap-2 md:px-20 px-10 pb-5">
-        <div className="col-span-8 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Mail</div>
-        <div className="col-span-4 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Github</div>
-        <div className="col-span-4 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Insta</div>
-        <div className="col-span-8 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Phone</div>
-        <div className="font-mont text-9xl absolute blur-md left-1/2 -translate-x-1/2 pt-15 leading-tight">HMU,<br/> STAY CLASSY.</div>
+    <div className="md:h-screen w-full pt-20 relative" id="contact">
+      <div className="font-mont md:text-[18vh] text-6xl md:pl-20 pl-5 sm:py-5 pb-8 font-bold">LET'S TALK.</div>
+      <div className="grid grid-rows-2 grid-cols-12 w-full h-[55vh] gap-2 md:px-20 px-5 pb-5">
+        <a
+          href="mailto:zaidzaihan7@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-span-8 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Mail</a>
+        <a
+          href="https://github.com/zaidzaihan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-span-4 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Github</a>
+        <a
+          href="https://www.instagram.com/zaid_zaihan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-span-4 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Insta</a>
+        <a
+          href="tel:+601124044350"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-span-8 bg-white/20 font-mono text-2xl p-5 rounded-3xl">Phone</a>
+        <div className="font-mont text-9xl absolute blur-md left-1/2 -translate-x-1/2 pt-15 leading-tight pointer-events-none">HMU,<br /> STAY CLASSY.</div>
 
 
 
@@ -29,6 +45,6 @@ export const Footer = () => {
         </h2>
         <p className="text-sm mt-1 text-white/70">Built with React + Vite</p>
       </div>
-    </div>
+    </div >
   );
 }
