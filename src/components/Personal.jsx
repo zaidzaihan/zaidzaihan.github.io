@@ -31,12 +31,12 @@ const item = {
 
 export const Personal = () => {
     return (
-        <div className="w-full min-h-screen px-5 lg:px-32">
+        <div className="w-full min-h-screen px-5 lg:px-32 pb-5">
             <motion.div variants={container} initial="hidden" animate="show" className="pt-24 lg:pt-32">
                 <motion.h1 variants={item} className="font-sans text-3xl md:text-4xl lg:text-6xl font-bold leading-loose">// personal space</motion.h1>
-                <motion.p variants={item} className="text-lg font-mono text-black/60 pb-10">Wait, you weren't supposed to be here!</motion.p>
+                <motion.p variants={item} className="text-sm md:text-lg font-mono text-black/60 pb-10">Wait, you weren't supposed to be here!</motion.p>
             </motion.div>
-            <motion.div variants={container} initial="hidden" animate="show" className="grid grid-rows-3 lg:grid-cols-3 gap-5">
+            <motion.div variants={container} initial="hidden" animate="show" className="grid lg:grid-cols-3 gap-5">
                 <motion.div variants={item} className="h-[60vh] w-auto relative group overflow-hidden">
                     <Link to="/tech">
                         <img

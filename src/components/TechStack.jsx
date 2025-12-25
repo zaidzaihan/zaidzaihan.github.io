@@ -72,11 +72,11 @@ export const TechStack = () => {
 
     }, []);
     return (
-        <div className='w-full min-h-screen px-32'>
+        <div className='w-full min-h-screen px-5 lg:px-32'>
             <div className='grid grid-cols-[1fr_3fr] gap-10'>
                 <div className='flex flex-col justify-center gap-10 pt-[10vh] sticky top-32 h-fit'>
                     {["techstack", "setup", "recent"].map((section) => (
-                        <div key={section.key} className={`font-sans font-bold text-6xl ${activeSection === section ? "text-[#FF5C00]" : "text-black/30"} transition-colors duration-500`}>
+                        <div key={section.key} className={`font-sans font-bold text-3xl md:text-6xl ${activeSection === section ? "text-[#FF5C00]" : "text-black/30"} transition-colors duration-500`}>
                             {section}
                         </div>
                     ))}
