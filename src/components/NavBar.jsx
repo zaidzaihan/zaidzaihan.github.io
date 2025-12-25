@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { button } from "framer-motion/client";
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -90,34 +89,34 @@ export const NavBar = () => {
                 <div className={`relative h-full bg-white flex flex-col justify-center items-center transition-transform duration-500 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}>
                     <nav className="flex flex-col items-center gap-8 font-sans font-semibold text-3xl">
-                        <a
-                            href="/about-me"
+                        <Link
+                            to="/about-me"
                             onClick={closeMenu}
                             className="hover:text-gray-600 transition-colors transform hover:scale-110 duration-200"
                         >
                             about me
-                        </a>
-                        <a
-                            href="/projects"
+                        </Link>
+                        <Link
+                            to="/projects"
                             onClick={closeMenu}
                             className="hover:text-gray-600 transition-colors transform hover:scale-110 duration-200"
                         >
                             projects
-                        </a>
-                        <a
-                            href="/personal-space"
+                        </Link>
+                        <Link
+                            to="/personal-space"
                             onClick={closeMenu}
                             className="hover:text-gray-600 transition-colors transform hover:scale-110 duration-200"
                         >
                             personal space
-                        </a>
-                        <a
-                            href="/contact"
+                        </Link>
+                        <Link
+                            to="/contact"
                             onClick={closeMenu}
                             className="mt-8 bg-black text-white px-12 py-5 rounded-full hover:bg-gray-800 transition-all transform hover:scale-110 duration-200"
                         >
                             contact
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             </div>

@@ -1,29 +1,27 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from "react";
 
-//language
+// language
 import Python from "../assets/logos/python.svg";
 import CPP from "../assets/logos/cplusplus.svg";
 import C from "../assets/logos/c.svg";
 import Javascript from "../assets/logos/javascript.svg";
 import Typescript from "../assets/logos/typescript-logo.svg";
 
-//framework
-import React from "../assets/logos/react-logo.svg";
+// framework
+import ReactLogo from "../assets/logos/react-logo.svg";
 import Next from "../assets/logos/next.svg";
 import FastAPI from "../assets/logos/fastapi.svg";
 import Flask from "../assets/logos/flask.svg";
 import NodeJS from "../assets/logos/nodedotjs.svg";
 
-//computer vision/ ML
+// computer vision / ML
 import OPENCV from "../assets/logos/opencv.svg";
 import Tensorflow from "../assets/logos/tensorflow.svg";
 import Dlib from "../assets/logos/dlib.svg";
 
-//gifs and arch screenshots
+// screenshots
 import ArchBtw from "../assets/archbtw.png";
 import ArchBtw2 from "../assets/archbtw2.png";
-
 
 const languages = [
     { name: "Python", logo: Python },
@@ -34,23 +32,23 @@ const languages = [
 ];
 
 const frameworks = [
-    { name: "React", logo: React },
+    { name: "React", logo: ReactLogo },
     { name: "NextJS", logo: Next },
     { name: "FastAPI", logo: FastAPI },
     { name: "Flask", logo: Flask },
     { name: "NodeJS", logo: NodeJS },
-]
+];
 
 const ML = [
-    { name: "OPENCV", logo: OPENCV },
+    { name: "OpenCV", logo: OPENCV },
     { name: "Tensorflow", logo: Tensorflow },
-    { name: "Dlib", logo: Dlib }
-]
-
+    { name: "Dlib", logo: Dlib },
+];
 
 export const TechStack = () => {
     const [activeSection, setActiveSection] = useState("techstack");
     const sectionRefs = useRef({});
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -64,51 +62,104 @@ export const TechStack = () => {
         );
 
         Object.values(sectionRefs.current).forEach((el) => {
-            if (el) {
-                observer.observe(el);
-            }
+            if (el) observer.observe(el);
         });
-        return () => observer.disconnect();
 
+        return () => observer.disconnect();
     }, []);
+
     return (
-        <div className='w-full min-h-screen px-5 lg:px-32'>
-            <div className='grid grid-cols-[1fr_3fr] gap-10'>
-                <div className='flex flex-col justify-center gap-10 pt-[10vh] sticky top-32 h-fit'>
-                    {["techstack", "setup", "recent"].map((section) => (
-                        <div key={section.key} className={`font-sans font-bold text-3xl md:text-6xl ${activeSection === section ? "text-[#FF5C00]" : "text-black/30"} transition-colors duration-500`}>
+        <div className="w-full min-h-screen px-5 lg:px-32 pb-5">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-10">
+
+                {/* DESKTOP STICKY SIDEBAR */}
+                <div className="hidden lg:flex flex-col gap-10 pt-[10vh] sticky top-32 h-fit">
+                    {["techstack", "setup", "recent"].map((section, id) => (
+                        <div
+                            key={id}
+                            className={`font-sans font-bold text-6xl transition-colors duration-500 ${activeSection === section
+                                ? "text-[#FF5C00]"
+                                : "text-black/30"
+                                }`}
+                        >
                             {section}
                         </div>
                     ))}
                 </div>
-                <div className='pt-32'>
-                    <section id="techstack" ref={(el) => (sectionRefs.current.techstack = el)} className='h-[80vh]'>
-                        <div className='pb-5'>
-                            <h2 className='font-mono text-lg text-black/60 pb-5'>// languages</h2>
-                            <div className='flex flex-row gap-5'>
-                                {languages.map((language, key) => (
-                                    <img key={language.name} src={language.logo} className='w-14 h-14'></img>
+
+                {/* CONTENT */}
+                <div className="pt-10 lg:pt-32">
+
+                    {/* TECHSTACK */}
+                    <section
+                        id="techstack"
+                        ref={(el) => (sectionRefs.current.techstack = el)}
+                        className="min-h-[40vh] border-b-2 border-black/30 pt-12 lg:pt-0 lg:border-0 lg:min-h-[80vh]"
+                    >
+                        {/* Mobile section title */}
+                        <h1 className="lg:hidden font-sans font-bold text-3xl mb-8">
+                            techstack
+                        </h1>
+
+                        <div className="pb-8">
+                            <h2 className="font-mono text-lg text-black/60 pb-5">
+                // languages
+                            </h2>
+                            <div className="flex flex-wrap gap-4">
+                                {languages.map((lang) => (
+                                    <img
+                                        key={lang.name}
+                                        src={lang.logo}
+                                        alt={lang.name}
+                                        className="w-10 h-10 md:w-14 md:h-14"
+                                    />
                                 ))}
                             </div>
                         </div>
-                        <div className='pb-5'>
-                            <h2 className='font-mono text-lg text-black/60 pb-5'>// frameworks</h2>
-                            <div className='flex flex-row gap-5'>
-                                {frameworks.map((framework, key) => (
-                                    <img key={framework.name} src={framework.logo} className='w-14 h-14'></img>
+
+                        <div className="pb-8">
+                            <h2 className="font-mono text-lg text-black/60 pb-5">
+                // frameworks
+                            </h2>
+                            <div className="flex flex-wrap gap-4">
+                                {frameworks.map((fw) => (
+                                    <img
+                                        key={fw.name}
+                                        src={fw.logo}
+                                        alt={fw.name}
+                                        className="w-10 h-10 md:w-14 md:h-14"
+                                    />
                                 ))}
                             </div>
                         </div>
-                        <div className='pb-5'>
-                            <h2 className='font-mono text-lg text-black/60 pb-5'>// Computer Vision/ ML</h2>
-                            <div className='flex flex-row gap-5'>
-                                {ML.map((ML, key) => (
-                                    <img key={ML.name} src={ML.logo} className='w-14 h-14'></img>
+
+                        <div className="pb-8">
+                            <h2 className="font-mono text-lg text-black/60 pb-5">
+                // computer vision / ML
+                            </h2>
+                            <div className="flex flex-wrap gap-4">
+                                {ML.map((tool) => (
+                                    <img
+                                        key={tool.name}
+                                        src={tool.logo}
+                                        alt={tool.name}
+                                        className="w-10 h-10 md:w-14 md:h-14"
+                                    />
                                 ))}
                             </div>
                         </div>
                     </section>
-                    <section id="setup" ref={(el) => (sectionRefs.current.setup = el)} className='h-[80vh]'>
+
+                    {/* SETUP */}
+                    <section
+                        id="setup"
+                        ref={(el) => (sectionRefs.current.setup = el)}
+                        className="min-h-[40vh] border-b-2 border-black/30 pt-12 lg:pt-0 lg:border-0 lg:min-h-[80vh]"
+                    >
+                        <h1 className="lg:hidden font-sans font-bold text-3xl mb-8">
+                            setup
+                        </h1>
+
                         <div className="font-mono text-lg leading-relaxed">
                             <p className="text-black/60">// environment</p>
 
@@ -120,21 +171,41 @@ export const TechStack = () => {
                             </ul>
 
                             <p className="mt-6 text-black/50">
-                                Built for low latency interaction and
-                                distraction-free development.
+                                Built for low latency interaction and distraction-free development.
                             </p>
-                            <div className='flex gap-5'>
-                                <img src={ArchBtw} alt="Arch btw" className='h-[30vh]' />
-                                <img src={ArchBtw2} alt="Arch btw 2" className='h-[30vh]' />
+                            <div className="flex flex-col md:flex-row mt-6 items-start gap-4">
+                                <img
+                                    src={ArchBtw}
+                                    alt="Arch btw"
+                                    className="w-full md:w-auto md:h-[30vh] object-contain"
+                                />
+                                <img
+                                    src={ArchBtw2}
+                                    alt="Arch btw 2"
+                                    className="w-full md:w-auto md:h-[30vh] object-contain"
+                                />
                             </div>
-                        </div>
 
+                        </div>
                     </section>
-                    <section id="recent" ref={(el) => (sectionRefs.current.recent = el)} className='h-[80vh]'>
-                        <h2 className='font-mono text-lg text-black/60 pb-5'>You came to early, there's no prize for earlybird!</h2>
+
+                    {/* RECENT */}
+                    <section
+                        id="recent"
+                        ref={(el) => (sectionRefs.current.recent = el)}
+                        className="min-h-[40vh] border-b-2 border-black/30 pt-12 lg:pt-0 lg:border-0 lg:min-h-[80vh] hidden md:block"
+                    >
+                        <h1 className="lg:hidden font-sans font-bold text-3xl mb-8">
+                            recent
+                        </h1>
+
+                        <h2 className="font-mono text-lg text-black/60">
+                            You came too early, there's no prize for early birds!
+                        </h2>
                     </section>
+
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

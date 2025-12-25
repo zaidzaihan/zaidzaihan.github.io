@@ -29,12 +29,12 @@ const item = {
 export const Hero = () => {
     return (
         <motion.div
-            className="w-full h-screen flex flex-col justify-start pt-80 items-center relative px-5"
+            className="w-full min-h-dvh flex flex-col justify-center items-center relative px-5"
             variants={container}
             initial="hidden"
             animate="show"
         >
-            <div>
+            <div className="-translate-y-10 sm:-translate-y-12 md:-translate-y-6">
                 {/* heading */}
                 <motion.h1 variants={item} className="pb-5">
                     <span className="block font-sans font-bold text-3xl md:text-6xl">
@@ -50,7 +50,7 @@ export const Hero = () => {
                     variants={item}
                     className="font-mono text-sm md:text-lg text-black/60 pb-10"
                 >
-                    A software engineer based in <br className="md:hidden"/> Perak, Malaysia
+                    A software engineer based in <br className="md:hidden" /> Perak, Malaysia
                     <br />
                     Hi, let's connect!
                 </motion.p>
@@ -70,7 +70,7 @@ export const Hero = () => {
                     </Link>
                 </motion.div>
             </div>
-            <div className="absolute flex justify-center bottom-0 text-black/">copyright @ 2025 zaid zaihan</div>
+            <div className="absolute bottom-[env(safe-area-inset-bottom)] pb-3 text-sm text-black/60">© 2025 Zaid Zaihan</div>
         </motion.div>
     )
 }
