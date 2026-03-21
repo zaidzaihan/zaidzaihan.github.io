@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ArrowLogo from "../assets/arrow_right.svg?react";
-import { projects } from "../ProjectsData";
+import { projects } from "../data/projects";
 
 /* animation variants */
 const container = {

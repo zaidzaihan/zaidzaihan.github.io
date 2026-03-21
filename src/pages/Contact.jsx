@@ -27,7 +27,7 @@ const item = {
   },
 }
 
-export const Footer = () => {
+export const Contact = () => {
   const contacts = [
     {
       name: "Email",
