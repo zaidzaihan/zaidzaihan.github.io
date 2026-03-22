@@ -179,9 +179,9 @@ const FinalCTA = () => (
 // Mobile Vertical Layout
 const MobileProjects = () => {
     return (
-        <div className="w-full flex flex-col gap-24 py-32 px-6">
+        <div className="w-full flex flex-col gap-16 py-20 px-6">
             {/* Mobile Story Header */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-2 mb-4">
                 <div className="font-mono text-[8px] uppercase tracking-[0.5em] text-spark">Archive_Initialization...</div>
                 <h1 className="font-display font-black text-5xl text-white tracking-tighter">THE_VOID</h1>
                 <p className="font-sans text-xs text-white/30 uppercase tracking-widest">Neural_Artifact_Count: 0{projects.length}</p>

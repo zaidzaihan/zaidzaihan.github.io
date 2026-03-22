@@ -104,7 +104,7 @@ export const Narrative = () => {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-32 md:mt-48 p-8 md:p-16 rounded-3xl border border-spark/20 bg-spark/2 flex flex-col items-center text-center gap-8 md:gap-10"
+                    className="mt-20 md:mt-48 p-8 md:p-16 rounded-3xl border border-spark/20 bg-spark/[0.02] flex flex-col items-center text-center gap-8 md:gap-10"
                 >
                     <div className="space-y-4">
                         <h2 className="font-display font-black text-3xl md:text-6xl text-white tracking-tighter">

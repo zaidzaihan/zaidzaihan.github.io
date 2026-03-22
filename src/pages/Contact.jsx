@@ -57,7 +57,7 @@ export const Transmission = () => {
 
     return (
         <div className="w-full min-h-screen lg:h-screen lg:overflow-hidden bg-abyss flex items-center justify-center pt-32 lg:pt-0 px-6 md:px-12 lg:px-24">
-            <div className="max-w-7xl w-full flex flex-col gap-12 lg:gap-16">
+            <div className="max-w-7xl w-full flex flex-col gap-8 lg:gap-16">
                 
                 {/* Protocol Header */}
                 <header className="flex flex-col items-center text-center space-y-4">

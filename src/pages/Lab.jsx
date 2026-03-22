@@ -68,7 +68,7 @@ const Monolith = ({ log, index, activeIndex, setActiveIndex }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 z-20 w-full px-6 flex justify-center"
+                        className="absolute bottom-32 md:bottom-24 left-1/2 -translate-x-1/2 z-20 w-full px-6 flex justify-center"
                     >
                         {log.link ? (
                             <Link 

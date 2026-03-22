@@ -78,8 +78,8 @@ export const Hero = () => {
                 style={{ borderStyle: 'solid' }}
             />
 
-            {/* Main Content Container */}
-            <div className="z-10 text-center w-full max-w-7xl flex flex-col items-center pt-16 md:pt-32">
+            {/* Main Content Container refined for Mobile */}
+            <div className="z-10 text-center w-full max-w-7xl flex flex-col items-center pt-12 md:pt-32">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
