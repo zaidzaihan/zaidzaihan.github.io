@@ -1,22 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 @import "tailwindcss";
 
 @theme {
-  --font-mont: "Montserrat", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-display: "Unbounded", sans-serif;
+  --font-mono: "DM Mono", monospace;
 
-  @keyframes cursor {
+  --color-abyss: #08080A;
+  --color-spark: #B794F4;
+  --color-pulse: #FF00FF;
+  --color-void: #121214;
 
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0;
-    }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
   }
 
-  --animate-cursor: cursor 0.7s infinite;
+  @keyframes spark-text-cycle {
+    0%, 100% { color: #CCFF00; }
+    50% { color: #B794F4; }
+  }
+
+  @keyframes spark-border-cycle {
+    0%, 100% { border-color: #CCFF00; }
+    50% { border-color: #B794F4; }
+  }
+
+  @keyframes spark-bg-cycle {
+    0%, 100% { background-color: #CCFF00; }
+    50% { background-color: #B794F4; }
+  }
+
+  @keyframes glitch-skew {
+    0%, 100% { transform: skew(0deg); }
+    20% { transform: skew(-1deg); }
+    40% { transform: skew(1.5deg); }
+    60% { transform: skew(-0.5deg); }
+    80% { transform: skew(0.5deg); }
+  }
+
+  @keyframes glitch-rgb {
+    0%, 100% { text-shadow: none; }
+    33% { text-shadow: 1px 0 #FF00FF, -1px 0 #CCFF00; }
+    66% { text-shadow: -1px 0 #FF00FF, 1px 0 #CCFF00; }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spark-text: spark-text-cycle 4s ease-in-out infinite;
+  --animate-spark-border: spark-border-cycle 4s ease-in-out infinite;
+  --animate-spark-bg: spark-bg-cycle 4s ease-in-out infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-abyss text-white/90 antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  ::selection {
+    @apply bg-spark text-abyss;
+  }
+}
+
+@layer components {
+  .holographic-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0.12;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .surreal-card {
+    @apply bg-void border border-white/5 p-8 rounded-4xl hover:border-spark/30 transition-all duration-500 will-change-transform;
+  }
+
+  .interactive-glow {
+    @apply absolute -inset-20 bg-spark/5 blur-[100px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000;
+  }
+
+  .glow-leak {
+    @apply absolute inset-y-0 right-0 w-px bg-linear-to-b from-transparent via-spark/20 to-transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(183, 148, 244, 0.4);
+  }
+
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
